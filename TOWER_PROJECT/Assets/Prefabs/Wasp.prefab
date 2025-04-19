@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  health: 0
+  health: 10
   towerTurret: {fileID: 0}
   speed: 0
-  xSpeed: 0
-  ySpeed: 0
+  xSpeed: 0.02
+  ySpeed: 0.04
   thisObject: {fileID: 6376123511327721971}
   xDir: 0
   yDir: 0

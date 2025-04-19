@@ -5,22 +5,13 @@ using UnityEngine;
 public class Projectile : Tower
 {
     public float speed = 1f;
-    public GameManager manager;
-    public GameObject thisObject;
     public Vector3 dir;
-    public float lifeTime;
+    private float lifeTime;
     public float endTime = 3f;
 
-    public void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        manager = FindObjectOfType<GameManager>();
-        thisObject.transform.position += dir * speed;
+        transform.position += dir * speed;
         lifeTime += Time.deltaTime;
         if (lifeTime >= endTime)
         {
@@ -30,10 +21,10 @@ public class Projectile : Tower
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject); // or reduce health if using HP system
+            Destroy(gameObject);
         }
     }
-
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HoneyCombHealth : HoneyBase
@@ -14,6 +15,19 @@ public class HoneyCombHealth : HoneyBase
     // Update is called once per frame
     void Update()
     {
+        //OnTriggerEnter2D(Collider2D other)
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
 
+        if (other.tag == "Wasp")
+        {
+            honeyCombHealth -= 10; // Decrease health by 10 when hit by a projectile
+            Destroy(other.gameObject);
+            if (honeyCombHealth <= 0)
+            {
+                Destroy(gameObject); // Destroy the honeycomb when health reaches 0
+            }
+        }
     }
 }

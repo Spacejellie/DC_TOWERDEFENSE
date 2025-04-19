@@ -10,6 +10,7 @@ TagManager:
   - Mid
   - Outer
   - Tower
+  - Wasp
   layers:
   - Default
   - TransparentFX

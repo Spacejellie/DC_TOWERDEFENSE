@@ -8,21 +8,25 @@ public class Tower : HoneyBase
     public float timerReset = 1.0f;
     public GameObject projectile;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-     
-    }
     void Update()
     {
-        if (bulletTimer >= timerReset)
+        bulletTimer += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.W) && bulletTimer >= timerReset)
         {
-            Instantiate(projectile);
+            GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
+            Projectile pScript = proj.GetComponent<Projectile>();
+            if (pScript != null)
+            {
+                pScript.dir = transform.up;
+                //the Pscript is the projectile script
+                //it sets the direction of the projectile to the direction of the tower
+            }
+
             bulletTimer = 0f;
         }
 
         Rotation();
-
     }
 
     private void Rotation()
@@ -35,14 +39,14 @@ public class Tower : HoneyBase
         {
             transform.Rotate(0, 0, -1);
         }
-      
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("collided with enemy");
-            health = health - 1;
+            Debug.Log("Collided with enemy");
+            health -= 1;
         }
     }
 }

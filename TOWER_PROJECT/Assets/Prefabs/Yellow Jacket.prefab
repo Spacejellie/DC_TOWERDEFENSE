@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8104807992458166778}
   m_Layer: 0
   m_Name: Yellow Jacket
-  m_TagString: Untagged
+  m_TagString: Wasp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &486639608280511978
 SpriteRenderer:
@@ -102,15 +102,15 @@ MonoBehaviour:
   health: 30
   towerTurret: {fileID: 1351065222366988113, guid: d0c5322eb012c734f8c65986bec4fea9, type: 3}
   speed: 0
-  xSpeed: 0.4
-  ySpeed: 0.4
+  xSpeed: 0.04
+  ySpeed: 0.02
   thisObject: {fileID: 4149863348858938089}
   xDir: 0
   yDir: 0
   manager: {fileID: 0}
   reverseTime: 0
   reverseInterval: 3
-  targetTower: {fileID: 0}
+  targetTower: {fileID: 1351065222366988113, guid: d0c5322eb012c734f8c65986bec4fea9, type: 3}
 --- !u!61 &-8104807992458166778
 BoxCollider2D:
   m_ObjectHideFlags: 0
