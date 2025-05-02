@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6050888966645481218}
   - component: {fileID: 2152032532100652134}
-  - component: {fileID: 8259360884522226115}
   - component: {fileID: -4327794973062051306}
+  - component: {fileID: 4043138934139782690}
+  - component: {fileID: 2461336932401468076}
   m_Layer: 0
   m_Name: Wasp
   m_TagString: Enemy
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6376123511327721971}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.000000011410949, y: -0.00000008667474, z: 0.6087605, w: -0.79335415}
   m_LocalPosition: {x: -7.31, y: -3, z: 0}
   m_LocalScale: {x: 0.85858, y: 0.85858, z: 0.85858}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
 --- !u!212 &2152032532100652134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,30 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8259360884522226115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6376123511327721971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce86132aeeac743876d99ef5a2c4b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: 
-  health: 10
-  towerTurret: {fileID: 0}
-  speed: 0
-  xSpeed: 0.02
-  ySpeed: 0.04
-  thisObject: {fileID: 6376123511327721971}
-  xDir: 0
-  yDir: 0
-  manager: {fileID: 0}
-  reverseTime: 0
-  reverseInterval: 3
 --- !u!61 &-4327794973062051306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +116,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -155,3 +132,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!50 &4043138934139782690
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376123511327721971}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2461336932401468076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376123511327721971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ffe1aaf33d5234bad2ba023e4b2fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: 
+  health: 10
+  speed: 0
+  xSpeed: 0.01
+  ySpeed: 0.01
+  thisObject: {fileID: 6376123511327721971}
+  xDir: 2
+  yDir: 2
+  enemyProjectile: {fileID: 6310529204511237434, guid: 6f7336ad6e3d7334aa911addde745aa7, type: 3}
+  fireRate: 0.59
+  bulletSpeed: 7.89
+  manager: {fileID: 1172242105641935091, guid: 4d24b5a72c5f41e4283eb90d32d474a9, type: 3}
+  reverseTime: 0
+  reverseInterval: 3

@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-   
 
     public float enemyTimer = 0f;
     public float spawnInterval = 1f;
@@ -18,12 +17,14 @@ public class GameManager : MonoBehaviour
 
     public Vector2 xBounds;
     public Vector2 yBounds;
+
     public GameObject enemy;
     public GameObject enemyTargeted;
 
 
-
     public GameObject tower;
+    public GameObject barrier1;
+    public GameObject barrier2;
 
     private void Awake()
     {
@@ -43,8 +44,8 @@ public class GameManager : MonoBehaviour
     {
         enemyTimer += Time.deltaTime;
         enemyTimer2 += Time.deltaTime;
-        Vector3 targetPos = new Vector3(Random.Range(xBounds.x, xBounds.y), Random.Range(yBounds.x, yBounds.y), 0f);
 
+        Vector3 targetPos = new Vector3(Random.Range(xBounds.x, xBounds.y), Random.Range(yBounds.x, yBounds.y), 0);
 
         if (enemyTimer > spawnInterval)
         {

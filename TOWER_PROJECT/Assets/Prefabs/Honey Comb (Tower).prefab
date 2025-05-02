@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 9064974689523077751}
   - component: {fileID: 68297595055070651}
   - component: {fileID: 3167299116948466500}
-  - component: {fileID: 4482224932013875673}
+  - component: {fileID: 3748264939735134416}
+  - component: {fileID: 5330790358345097016}
   m_Layer: 0
   m_Name: Honey Comb (Tower)
   m_TagString: Untagged
@@ -101,19 +102,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   health: 100
-  towerTurret: {fileID: 0}
-  bulletTimer: 0
-  timerReset: 1
+  bulletTimer: 0.1
+  timerReset: 0.51
   projectile: {fileID: 6038675758618854240, guid: e4084f93a20a129419b01b90e3a8da1c, type: 3}
---- !u!58 &4482224932013875673
-CircleCollider2D:
+--- !u!50 &3748264939735134416
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351065222366988113}
-  m_Enabled: 1
-  m_Density: 1
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -121,25 +128,24 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5330790358345097016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351065222366988113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d529b440fbafd144c8dee95c6a63476b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: 
+  health: 10
 --- !u!1 &7637944168294698620
 GameObject:
   m_ObjectHideFlags: 0

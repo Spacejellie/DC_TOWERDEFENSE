@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 2433662822255263956}
   - component: {fileID: 5164318415726288367}
   - component: {fileID: 9011298549601239329}
-  - component: {fileID: 1203768663490295084}
+  - component: {fileID: -2281847122394703602}
+  - component: {fileID: 5424474321222882279}
   m_Layer: 0
   m_Name: Honey Comb (Outer)
-  m_TagString: Outer
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5164318415726288367
 SpriteRenderer:
@@ -115,13 +116,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &1203768663490295084
+--- !u!114 &-2281847122394703602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,11 +131,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5156269724754396670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db24c5282f52c314a94e36d69e4af15e, type: 3}
+  m_Script: {fileID: 11500000, guid: afaeba50748bfca41b943d55959572d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Outer Comb
+  health: 10
+  maxHealth: 10
+--- !u!114 &5424474321222882279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156269724754396670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d529b440fbafd144c8dee95c6a63476b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  health: 0
-  towerTurret: {fileID: 1351065222366988113, guid: d0c5322eb012c734f8c65986bec4fea9, type: 3}
-  honeyCombHealth: 30
-  honeyCombPrefab: {fileID: 5156269724754396670}
+  health: 10

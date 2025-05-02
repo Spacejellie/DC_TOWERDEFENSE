@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : HoneyBase
+public class Tower : CharacterBase
 {
     public float bulletTimer = 0f;
     public float timerReset = 1.0f;
     public GameObject projectile;
+    
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
     void Update()
     {
         bulletTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.W) && bulletTimer >= timerReset)
+        if (Input.GetKey(KeyCode.W) && bulletTimer >= timerReset)
         {
             GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
             Projectile pScript = proj.GetComponent<Projectile>();
@@ -40,13 +46,12 @@ public class Tower : HoneyBase
             transform.Rotate(0, 0, -1);
         }
     }
-
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Collided with enemy");
-            health -= 1;
+            Debug.Log("collided with enemy");
+            health = health - 1;
         }
     }
 }

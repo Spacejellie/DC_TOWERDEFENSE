@@ -11,6 +11,8 @@ TagManager:
   - Outer
   - Tower
   - Wasp
+  - Cricle
+  - enemy_bullet
   layers:
   - Default
   - TransparentFX
